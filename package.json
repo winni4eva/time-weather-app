@@ -1,0 +1,25 @@
+{
+  "name": "time-weather-app",
+  "version": "1.0.0",
+  "description": "A weather app for the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js NewYork NY"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winni4eva/time-weather-app.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "adam winni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winni4eva/time-weather-app/issues"
+  },
+  "homepage": "https://github.com/winni4eva/time-weather-app#readme",
+  "dependencies": {
+    "unirest": "0.6.0"
+  }
+}
