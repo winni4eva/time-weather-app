@@ -17,7 +17,7 @@ const postalCode = inputs[1];
 weather.get(location, postalCode, function(status, headers, body){
     if(status === 200) {
         const weatherDescription = body.weather[0].description;
-        var date = new Date(String(body.dt));
+        let date = new Date(String(body.dt));
 
         if(date.toDateString() === 'Invalid Date') {
             date = new Date();
