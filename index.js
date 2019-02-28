@@ -1,3 +1,4 @@
+'use strict';
 /*
 * Primary file for Time/Weather App
 *
@@ -14,10 +15,12 @@ if (inputs.length !== 2) {
 const location = inputs[0];
 const postalCode = inputs[1];
 
-weather.get(location, postalCode, function(status, headers, body){
-    if (status === 200) {
-        const weatherDescription = body.weather[0].description;
-        let date = new Date(String(body.dt));
+const getWeatherReport = async () => {
+    const report = await weather.get(location, postalCode);
+
+    if (report.data) {
+        const weatherDescription = report.data.weather[0].description;
+        let date = new Date(String(report.data.dt));
 
         if (date.toDateString() === 'Invalid Date') {
             date = new Date();
@@ -25,6 +28,8 @@ weather.get(location, postalCode, function(status, headers, body){
         const currentDateTime = date.toDateString();
         console.log(`The weather is ${weatherDescription} in ${location} for period ${currentDateTime}`);
     } else {
-        console.log('Failed processing your request, please try again');
+        console.log('Failed processing request, please try again');
     }
-});
+}
+  
+getWeatherReport();

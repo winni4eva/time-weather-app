@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/winni4eva/time-weather-app#readme",
   "dependencies": {
+    "axios": "0.18.0",
     "unirest": "0.6.0"
   }
 }
